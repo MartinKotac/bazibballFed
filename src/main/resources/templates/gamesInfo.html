@@ -1,0 +1,74 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>GamesInfo</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+</head>
+<body>
+<h2>Game Players</h2>
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Surname</th>
+        <th scope="col">Number</th>
+        <th scope="col">Position</th>
+        <th scope="col">Club</th>
+        <th scope="col">Minutes</th>
+
+
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="playere : ${gamePlayers}">
+        <td th:text="${playere.getIme()}" ></td>
+        <td th:text="${playere.getPrezime()}" ></td>
+        <td th:text="${playere.getBrojNaDres()}" ></td>
+        <td th:text="${playere.getPozicija()}" ></td>
+        <td th:text="${playere.getKlub()}" ></td>
+        <td th:text="${playere.getMinutaza()}" ></td>
+    </tr>
+    </tbody>
+</table>
+<h2>Game Coaches</h2>
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Surname</th>
+        <th scope="col">Type</th>
+        <th scope="col">Club</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="coache : ${gameCoaches}">
+        <td th:text="${coache.getIme()}" ></td>
+        <td th:text="${coache.getPrezime()}" ></td>
+        <td th:text="${coache.getTipNaTrener()}" ></td>
+        <td th:text="${coache.getKlub()}" ></td>
+    </tr>
+    </tbody>
+</table>
+<h2>Game Refs</h2>
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Surname</th>
+        <th scope="col">Level</th>
+
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="refe : ${refGames}">
+        <td th:text="${refe.getIme()}" ></td>
+        <td th:text="${refe.getPrezime()}" ></td>
+        <td th:text="${refe.getSudiskoNivo()}" ></td>
+    </tr>
+    </tbody>
+</table>
+
+</body>
+</html>

@@ -1,0 +1,37 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Games</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+</head>
+<body>
+<h2>All Games</h2>
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <th scope="col">Home</th>
+        <th scope="col">Result</th>
+        <th scope="col">Guest</th>
+        <th scope="col">Date</th>
+        <th scope="col">Delegation</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="game : ${listOfGames}">
+        <td th:text="${game.getDomakin()}" ></td>
+        <td th:text="${game.getRezultat()}" ></td>
+        <td th:text="${game.getGostin()}" ></td>
+        <td th:text="${game.getDatumNaOdrzuvanje()}" ></td>
+        <td th:text="${game.getIme()+' '+game.getPrezime()}" ></td>
+        <td class="text-right">
+            <a th:href="@{'/games/info/{id}' (id=${game.getIdNatprevar()})}" type="" class="btn btn-sm btn-info"><i class="fa fa-trash">Game Info</i></a>
+        </td>
+    </tr>
+    </tbody>
+</table>
+<a  href="/standings" class="btn btn-sm btn-info">Show Standings</a> <br>
+
+</body>
+</html>

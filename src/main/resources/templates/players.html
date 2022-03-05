@@ -1,0 +1,39 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Club PLayers</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+</head>
+<body>
+<h2>All Players</h2>
+
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Surname</th>
+        <th scope="col">Number</th>
+        <th scope="col">Position</th>
+        <th scope="col">Club</th>
+
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="player : ${listOfClubs}">
+        <td th:text="${player.getIme()}" ></td>
+        <td th:text="${player.getPrezime()}" ></td>
+        <td th:text="${player.getBrojNaDres()}" ></td>
+        <td th:text="${player.getPozicija()}" ></td>
+        <td th:text="${player.getKlub()}" ></td>
+        <td class="text-right">
+            <a th:href="@{'/home/players/delete/{id}' (id=${player.getEmbg()})}" type="" class="btn btn-sm btn-danger"><i class="fa fa-trash">Delete</i></a>
+        </td>
+    </tr>
+    </tbody>
+</table>
+<a th:href="@{'/home'}"   class="btn btn-sm btn-info"><i class="fa fa-trash">Home</i></a>
+
+</body>
+</html>

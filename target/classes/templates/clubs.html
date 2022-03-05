@@ -1,0 +1,35 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Clubs</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+</head>
+<body>
+<h2>All Clubs</h2>
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Home Court</th>
+        <th scope="col">Sponsor</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="club : ${lista}">
+        <td th:text="${club.getIme()}" ></td>
+        <td th:text="${club.getDomasenteren()}" ></td>
+        <td th:text="${club.getSponzor()}" ></td>
+        <td class="text-right">
+            <a th:href="@{'/home/clubs/addcoach/{id}' (id=${club.getId1()})}" type="" class="btn btn-sm btn-info"><i class="fa fa-trash">Add Coach</i></a>
+            <a th:href="@{'/home/clubs/addplayer/{id}' (id=${club.getId1()})}" type="" class="btn btn-sm btn-info"><i class="fa fa-trash">Add Player</i></a>
+            <a   th:href="@{'/home/clubs/delete/{id}' (id=${club.getId1()})}" type="" class="btn btn-sm btn-danger"><i class="fa fa-trash">Delete</i></a>
+        </td>
+    </tr>
+    </tbody>
+</table>
+<a href="/home/clubs/addclub" class="btn btn-sm btn-info"><i class="fa fa-trash">Add Club</i></a>
+
+</body>
+</html>

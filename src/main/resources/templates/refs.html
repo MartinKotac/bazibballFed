@@ -1,0 +1,37 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>All Refs</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+</head>
+<body>
+<h2>All Refs</h2>
+
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Surname</th>
+        <th scope="col">Level</th>
+
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="ref : ${refsList}">
+        <td th:text="${ref.getIme()}" ></td>
+        <td th:text="${ref.getPrezime()}" ></td>
+        <td th:text="${ref.getSudiskoNivo()}" ></td>
+        <td class="text-right">
+            <a th:href="@{'/home/refs/delete/{id}' (id=${ref.getEmbg()})}" type="" class="btn btn-sm btn-danger"><i class="fa fa-trash">Delete</i></a>
+        </td>
+    </tr>
+    </tbody>
+</table>
+<a href="/home/refs/addref" class="btn btn-sm btn-info"><i class="fa fa-trash">Add Ref</i></a>
+<a th:href="@{'/home'}"   class="btn btn-sm btn-info"><i class="fa fa-trash">Home</i></a>
+
+
+</body>
+</html>

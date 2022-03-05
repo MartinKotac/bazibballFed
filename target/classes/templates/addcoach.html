@@ -1,0 +1,20 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Club</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+<h2>Add Coach</h2>
+<form th:action="@{/home/clubs/addcoach}" th:method="POST">
+    <input type="hidden" th:value="${idKlub}" th:name="idKlub"><br>
+    <label >EMBG:  </label><input type="text" th:name="embg"><br>
+    <label >Name:  </label><input type="text" th:name="ime"><br>
+    <label >Surname:  </label><input type="text" th:name="prezime"> <br>
+    <label >Type:  </label><input type="text" th:name="tip"> <br>
+    <input type="submit" th:value="Submit">
+</form>
+
+
+</body>
+</html>
