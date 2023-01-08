@@ -18,4 +18,6 @@ public class SudijaSudiNaNatprevar {
     public void setId(SudijaSudiNaNatprevarId id) {
         this.id = id;
     }
+
+
 }

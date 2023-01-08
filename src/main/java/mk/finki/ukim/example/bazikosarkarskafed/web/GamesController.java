@@ -30,10 +30,6 @@ public class GamesController {
         model.addAttribute("listOfGames",gamesService.listAll());
         return "games";
     }
-//    @GetMapping(value = "/info")
-//    public String getGameInfoPage() {
-//        return "gamesIngo";
-//    }
     @GetMapping(value = "/info/{id}")
     public String getGameInfo(@PathVariable Integer id,Model model) {
         model.addAttribute("gamePlayers",gamePlayersService.listByGameId(id));

@@ -18,4 +18,5 @@ public class IgracIgraNaNatprevar {
     @Column(name = "minutaza", length = 5)
     private String minutaza;
 
+
 }
